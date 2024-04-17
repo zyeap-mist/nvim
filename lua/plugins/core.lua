@@ -1,14 +1,12 @@
 return {
-  -- add pyright to lspconfig
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
-      autoformat = false,
       ---@type lspconfig.options
       servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
+        ruff_lsp = {},
         gopls = {},
       },
     },
@@ -38,7 +36,7 @@ return {
         lua = { "stylua" },
         -- Conform will run multiple formatters sequentially
         go = { "goimports", "gofmt" },
-        python = { "black" },
+        python = { "ruff_fix", "ruff_format" },
       },
     },
   },
