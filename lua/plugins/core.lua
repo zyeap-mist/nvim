@@ -6,7 +6,6 @@ return {
       ---@type lspconfig.options
       servers = {
         pyright = {},
-        ruff_lsp = {},
         gopls = {},
       },
     },
@@ -36,7 +35,7 @@ return {
         lua = { "stylua" },
         -- Conform will run multiple formatters sequentially
         go = { "goimports", "gofmt" },
-        python = { "ruff_fix", "ruff_format" },
+        python = { "black" },
       },
     },
   },
